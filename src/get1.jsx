@@ -1,12 +1,13 @@
-import { Clipboard, closeMainWindow, showToast, Toast } from "@raycast/api";
+import { Clipboard, closeMainWindow, showToast, Toast, getPreferenceValues } from "@raycast/api";
 import autoTyper from "./autoTyper";
 import axios from "axios";
 
 export default async function get1() {
+  const { send1 } = getPreferenceValues();
   await closeMainWindow();
 
   try {
-    const response = await axios.get("https://linkify.pockethost.io/api/collections/shukla/records/x4hfs9wr3qi6p4h");
+    const response = await axios.get(`https://linkify.pockethost.io/api/collections/shukla/records/${send1}`);
     const data = response.data;
 
     const content = data.answer;

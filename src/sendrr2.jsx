@@ -1,4 +1,4 @@
-import { closeMainWindow, showToast, Toast } from "@raycast/api";
+import { closeMainWindow, showToast, Toast, getPreferenceValues } from "@raycast/api";
 import { exec as execCallback } from "child_process";
 import fs from "fs";
 import path from "path";
@@ -7,6 +7,7 @@ import util from "util";
 import axios from "axios";
 
 export default async function sendrr1() {
+  const { send2 } = getPreferenceValues();
   const exec = util.promisify(execCallback);
   const output_path_frame = path.join(os.homedir(), "Documents");
   const frame_filename = "1.png";
@@ -29,12 +30,13 @@ export default async function sendrr1() {
       };
 
       const response = await axios.patch(
-        "https://linkify.pockethost.io/api/collections/shukla/records/txk0c5d318gdeex",
+        `https://linkify.pockethost.io/api/collections/shukla/records/${send2}`,
         data,
         {
           headers: {
             "Content-Type": "application/json",
           },
+          timeout: 30000,
         },
       );
 

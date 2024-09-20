@@ -1,4 +1,4 @@
-import { closeMainWindow, showToast, Toast } from "@raycast/api";
+import { closeMainWindow, showToast, Toast, getPreferenceValues } from "@raycast/api";
 import { exec as execCallback } from "child_process";
 import fs from "fs";
 import path from "path";
@@ -35,6 +35,7 @@ export default async function sendrr1() {
           headers: {
             "Content-Type": "application/json",
           },
+          timeout: 30000,
         },
       );
 
