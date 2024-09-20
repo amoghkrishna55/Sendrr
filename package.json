@@ -12,16 +12,40 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "sendrr",
-      "title": "Sendrr",
+      "name": "sendrr1",
+      "title": "Sendrr1",
       "subtitle": "Help",
       "description": "Information about how to work with Sendrr",
-      "mode": "view"
+      "mode": "no-view"
+    },
+    {
+      "name": "sendrr2",
+      "title": "Sendrr2",
+      "subtitle": "Send",
+      "description": "Send information to the database",
+      "mode": "no-view"
+    },
+    {
+      "name": "get1",
+      "title": "Get1",
+      "subtitle": "Get the first item",
+      "description": "Get the first item from the database",
+      "mode": "no-view"
+    },
+    {
+      "name": "get2",
+      "title": "Get2",
+      "subtitle": "Get the second item",
+      "description": "Get the second item from the database",
+      "mode": "no-view"
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.81.2",
-    "@raycast/utils": "^1.16.3"
+    "@raycast/utils": "^1.16.3",
+    "axios": "^1.7.7",
+    "firebase": "^10.13.2",
+    "pocketbase": "^0.21.5"
   },
   "devDependencies": {
     "@raycast/eslint-config": "^1.0.8",
