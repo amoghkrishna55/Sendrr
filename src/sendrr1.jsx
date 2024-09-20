@@ -7,6 +7,7 @@ import util from "util";
 import axios from "axios";
 
 export default async function sendrr1() {
+  const { send1 } = getPreferenceValues();
   const exec = util.promisify(execCallback);
   const output_path_frame = path.join(os.homedir(), "Documents");
   const frame_filename = "1.png";
@@ -29,7 +30,7 @@ export default async function sendrr1() {
       };
 
       const response = await axios.patch(
-        "https://linkify.pockethost.io/api/collections/shukla/records/x4hfs9wr3qi6p4h",
+        `https://linkify.pockethost.io/api/collections/shukla/records/${send1}`,
         data,
         {
           headers: {
