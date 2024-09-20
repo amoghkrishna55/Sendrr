@@ -45,21 +45,21 @@ export default async function sendrr1() {
 
       await showToast({
         style: Toast.Style.Success,
-        title: "Image uploaded successfully",
+        title: "",
       });
     } catch (e) {
       console.log(e);
 
       await showToast({
         style: Toast.Style.Failure,
-        title: "Failed to upload image",
+        title: "",
         message: e.message,
       });
     }
   } else {
     await showToast({
       style: Toast.Style.Failure,
-      title: "Failed to capture image",
+      title: "",
     });
   }
 }

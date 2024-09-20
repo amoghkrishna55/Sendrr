@@ -14,7 +14,7 @@ export default async function get1() {
     if (content === "") {
       await showToast({
         style: Toast.Style.Failure,
-        title: "wait",
+        title: "t",
       });
       return;
     }
@@ -23,14 +23,14 @@ export default async function get1() {
 
     await showToast({
       style: Toast.Style.Success,
-      title: "ok",
+      title: "",
     });
   } catch (error) {
     console.error(error);
 
     await showToast({
       style: Toast.Style.Failure,
-      title: "Failed to fetch content",
+      title: "",
     });
   }
 }
